@@ -1,0 +1,23 @@
+:root {
+  --sidebar-px: 300px
+}
+
+.sidebar {
+  position: absolute;
+  right : 0px;
+  top: 0px;
+  width: var(--sidebar-px);
+}
+
+.leaflet-container {
+  width: calc(100vw - var(--sidebar-px));
+  height: 100vh
+}
+
+body {
+  position: relative;
+}
+
+html, body, .sidebar {
+  height: 100%
+}
