@@ -22,6 +22,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-css": "node-sass-chokidar src/css -o src/css",
+    "watch-css": "npm run build-css && node-sass-chokidar src/css -o src/css --watch --recursive"
+  },
+  "devDependencies": {
+    "node-sass-chokidar": "^0.0.3"
   }
 }

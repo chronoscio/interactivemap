@@ -2,4 +2,5 @@ build/
 node_modules/
 .DS_Store
 .sublime-*
-
+src/css/index.css
+yarn-error.log
