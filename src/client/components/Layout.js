@@ -1,9 +1,21 @@
-import React from 'react-native';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { ConnectedRouter } from 'react-router-redux';
+import { Route } from 'react-router';
 
-class Layout extends React.component {
+import MapDemo from './MapDemo';
+
+class Layout extends React.Component {
+    static propTypes = {
+        history: PropTypes.object.isRequired
+    }
+
     render() {
-        return null;
+        return (
+            <ConnectedRouter history={this.props.history}>
+                <Route exact path="/" component={MapDemo}/>
+            </ConnectedRouter>
+        );
     }
 }
 

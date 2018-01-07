@@ -1,3 +1,6 @@
+import React from 'react';
+import Select from 'react-select';
+
 class Buttons extends React.Component {
 
   render() {

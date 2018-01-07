@@ -1,15 +1,16 @@
 import React from 'react';
 import { Provider }           from 'react-redux';
 import ReactDOM from 'react-dom';
-import Select from 'react-select';
 import Layout from './components/Layout';
+
+import {createStore, history} from './store';
 
 // import '../css/index.css';
 
 // import 'react-select/dist/react-select.css';
 // import * as MapJS from './map.js';
 
-class App extends React.component {
+class App extends React.Component {
 
     constructor(props) {
         super(props);
@@ -19,7 +20,7 @@ class App extends React.component {
     render() {
         return (
             <Provider store={this.store}>
-                <Layout />
+                <Layout history={history} />
             </Provider>
         );
     }
