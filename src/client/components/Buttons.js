@@ -8,7 +8,7 @@ class Buttons extends React.Component {
     { value: 14530101, label: '14530101' },
     { value: 14520101, label: '14520101' }
   ];
-  function onDatePick(val){MapJS.changeTime(val.value);}
+  function onDatePick(val){/*MapJS.changeTime(val.value);*/}
     return (
       <div>
         <Select

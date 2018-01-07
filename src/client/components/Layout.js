@@ -1,20 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ConnectedRouter } from 'react-router-redux';
-import { Route } from 'react-router';
+import { Route, Switch } from 'react-router';
 
+import TopNavigation from './TopNavigation';
 import MapDemo from './MapDemo';
 
 class Layout extends React.Component {
-    static propTypes = {
-        history: PropTypes.object.isRequired
-    }
 
     render() {
         return (
-            <ConnectedRouter history={this.props.history}>
-                <Route exact path="/" component={MapDemo}/>
-            </ConnectedRouter>
+            <React.Fragment>
+                <TopNavigation />
+                <div className="page">
+                    <Switch>
+                        <Route exact path="/" component={MapDemo}/>
+                    </Switch>
+                </div>
+            </React.Fragment>
         );
     }
 }

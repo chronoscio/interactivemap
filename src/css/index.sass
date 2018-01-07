@@ -1,35 +1,84 @@
-
+$navbar-height: 60px
 $sidebar-px: 350px
+
+
+body
+    position: relative
+    font-family: sans-serif
+
+
+html, body
+    height: 100%
+    width : 100%
+
+
+*
+    padding: 0
+    margin: 0
+
 
 #react
     position: relative
     width: 100%
     height: 100%
 
-.sidebar
-    position: absolute
-    right : 0px
-    top: 0px
-    width: $sidebar-px
-    height: 100vh
+.top-navigation
+    align-items: center
+    background: #000
+    color: #fff
+    display: flex
+    flex-direction: row
+    height: $navbar-height
+    widht: 100%
+
+    .logo
+        font-size: 24px
+        padding: 26px
+
+    nav
+        margin-left: 100px
+
+        a
+            text-decoration: none
+
+            &:link, &:visited
+                color: #fff
+
+            &:hover,  &:active
+                color: #b2b2b2
+
+            &.selected
+                font-weight: bold
 
 
-.leaflet-container
-    position: absolute
-    left : 0px
-    top: 0px
-    width: calc(100vw - #{$sidebar-px})
-    height: 100vh
 
-body
+.page
+    align-items: stretch
+    display: flex
+    flex-direction: row
+    flex: 1
+    height: 100%
     position: relative
+    width: 100%
 
+    .sidebar
+        // flex: 0 0 $sidebar-px
+        flex: 1 1 auto
+        max-width: $sidebar-px
+        background: red
+        height: 100%
+        overflow-y: auto
+        // width: $sidebar-px
 
-html, body
-    height: 100vh
-    width : 100vh
+    .map-container
+        flex: 1 100%
+        // height: calc(90vh - #{$navbar-height})
+        // min-height: calc(90% - #{$navbar-height})
+        // height: calc(100% - #{$navbar-height})
+        // min-height: 400px
+        height: 100%
+        width: calc(100vw - #{$sidebar-px})
 
-
-*
-	padding: 0
-	margin: 0
+        .leaflet-container
+            height: 100%
+            min-width: 400px
