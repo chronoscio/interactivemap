@@ -1,6 +1,10 @@
 $navbar-height: 60px
 $sidebar-px: 350px
 
+*
+    box-sizing: border-box
+    padding: 0
+    margin: 0
 
 body
     position: relative
@@ -10,11 +14,6 @@ body
 html, body
     height: 100%
     width : 100%
-
-
-*
-    padding: 0
-    margin: 0
 
 
 #react
@@ -53,32 +52,26 @@ html, body
 
 
 .page
-    align-items: stretch
-    display: flex
-    flex-direction: row
-    flex: 1
     height: 100%
     position: relative
     width: 100%
 
     .sidebar
-        // flex: 0 0 $sidebar-px
-        flex: 1 1 auto
-        max-width: $sidebar-px
-        background: red
-        height: 100%
+        padding: 20px
+        position: absolute
+        right: 0
+        top: 0
+        height: calc(100vh - #{$navbar-height})
         overflow-y: auto
-        // width: $sidebar-px
+        width: $sidebar-px
 
     .map-container
-        flex: 1 100%
-        // height: calc(90vh - #{$navbar-height})
-        // min-height: calc(90% - #{$navbar-height})
-        // height: calc(100% - #{$navbar-height})
-        // min-height: 400px
+        position: absolute
+        top: 0
+        left: 0
         height: 100%
         width: calc(100vw - #{$sidebar-px})
 
         .leaflet-container
-            height: 100%
-            min-width: 400px
+            height: calc(100vh - #{$navbar-height})
+            width: 100%
