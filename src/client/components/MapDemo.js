@@ -19,5 +19,5 @@ class MapDemo extends React.Component {
 }
 
 export default connect(state => ({
-
+    demo: state.demo
 }))(MapDemo);

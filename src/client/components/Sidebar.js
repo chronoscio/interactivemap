@@ -1,13 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { downloadAndShowDemoMap } from '../actionCreators/demoActions';
 
 import Buttons from './Buttons';
 
 class SideBar extends React.Component {
+
+  onDatePick(value) {
+    this.props.dispatch(downloadAndShowDemoMap(value));
+  }
+
   render() {
     return (
       <div className="sidebar side">
         <div className="buttons">
-          <Buttons/>
+          <Buttons onDatePick={this.onDatePick.bind(this)} />
         </div>
         <div className="country-info">
           <div>{/* status */}</div>
@@ -18,4 +26,6 @@ class SideBar extends React.Component {
   }
 }
 
-export default SideBar;
+export default connect(state => ({
+  demo: state.demo
+}))(SideBar);

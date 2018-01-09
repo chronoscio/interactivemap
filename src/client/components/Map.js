@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 
 const position = [51.505, -0.09]
@@ -6,6 +7,8 @@ const position = [51.505, -0.09]
 class LeafletMap extends React.Component {
 
     render() {
+        // this.props.demo.geo
+        // this.props.demo.attrs
         return (
             <Map center={position} zoom={13}>
                 <TileLayer
@@ -22,4 +25,6 @@ class LeafletMap extends React.Component {
     }
 }
 
-export default LeafletMap;
+export default connect(state => ({
+  demo: state.demo
+}))(LeafletMap);
