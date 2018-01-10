@@ -4,8 +4,8 @@ export function downloadAndShowDemoMap(dateValue) {
     return async (dispatch, getState) => {
         dispatch({type: "LOADING"});
 
-        const geoAPI = 'http://146.185.177.41/get/coordinates?timestamp=';
-        const attrbAPI = 'http://146.185.177.41/get/attributes?code=';
+        const geoAPI = 'http://146.185.177.41/api/get/coordinates?timestamp=';
+        const attrbAPI = 'http://146.185.177.41/api/get/attributes?timestamp=';
 
         try {
             const [geo, attrs] = await Promise.all([

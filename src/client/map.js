@@ -23,8 +23,8 @@ function getAttributes(url) {
 
 export function changeTime(time) {
   geoLayer.clearLayers();
-  var geoAPI = 'http://146.185.177.41/get/coordinates?timestamp='
-  var attrbAPI = 'http://146.185.177.41/get/attributes?code='
+  var geoAPI = 'http://146.185.177.41/api/get/coordinates?timestamp='
+  var attrbAPI = 'http://146.185.177.41/api/get/attributes?timestamp='
   Axios.all([
     getGeoJSONLayer(geoAPI.concat(time)),
     getGeoJSONLayer(geoAPI.concat(time))
