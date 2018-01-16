@@ -34,5 +34,3 @@ export function startClient() {
     return ReactDOM.render(
     <App />, document.getElementById('react'));
 }
-
-

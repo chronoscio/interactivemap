@@ -11,7 +11,7 @@ class TopNavigation extends React.Component {
     render() {
         return (
             <div className="top-navigation">
-                <div className="logo">Le Map</div>
+                <div className="logo">History Map</div>
                 <nav>
                     <Link to="/">Demo</Link>
                 </nav>
