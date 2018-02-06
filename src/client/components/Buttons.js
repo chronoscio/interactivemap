@@ -10,8 +10,7 @@ class Buttons extends React.Component {
 
   render() {
     var dateOptions = [
-    { value: 14530101, label: '14530101' },
-    { value: 14520101, label: '14520101' }
+    { value: "1789-01-01", label: '17890101' }
   ];
     return (
       <div>

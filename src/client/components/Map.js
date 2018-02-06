@@ -13,7 +13,11 @@ class LeafletMap extends React.Component {
         if(this.props.demo.geo !== undefined && this.props.demo.geo !== null)
         {
           //console.log(this.props.demo.geo.data.geojson);
-          geoLayer = <GeoJSON data={this.props.demo.geo.data.geojson} />
+          var styleFunc = function(feature) {
+            return {color: feature.properties.colour};
+          }
+
+          geoLayer = <GeoJSON data={this.props.demo.geo} style={styleFunc} />
         }
         return (
             <Map center={position} zoom={4}>
