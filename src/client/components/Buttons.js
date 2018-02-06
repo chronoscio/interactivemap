@@ -8,9 +8,10 @@ class Buttons extends React.Component {
     onDatePick: PropTypes.func.isRequired
   }
 
+  //TODO get from server
   render() {
     var dateOptions = [
-    { value: "1789-01-01", label: '17890101' }
+    { value: "1789-01-01", label: '1789-01-01' }
   ];
     return (
       <div>

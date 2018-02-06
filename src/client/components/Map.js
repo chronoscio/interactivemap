@@ -10,9 +10,9 @@ class LeafletMap extends React.Component {
         var geoLayer;
         if(this.props.demo.geo !== undefined && this.props.demo.geo !== null)
         {
-          //console.log(this.props.demo.geo.data.geojson);
           var styleFunc = function(feature) {
-            return {color: feature.properties.colour};
+            console.log(feature)
+            return {color: feature.properties.color};
           }
 
           geoLayer = <GeoJSON data={this.props.demo.geo} style={styleFunc} />

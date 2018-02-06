@@ -6,19 +6,28 @@ const DEFAULT_STATE = {
 
 const HANDLERS = {
 
-  ["SHOW_DEMO_MAP"]: (state, {dateValue, geo, attrs}) => {
+  ["SHOW_DEMO_MAP"]: (state, {dateValue, geo, states}) => {
 
-    var to_add = {
-      "type": "GeometryCollection",
-      "geometries": []
-    }
+    var to_add = []
     for (let result of geo.data) {
-      to_add.geometries.push(JSON.parse(result.geoJson))
-    }
+      var wrapper = {
+        type: "Feature",
+        properties: {},
+        geometry: JSON.parse(result.geoJson)
+      }
+      to_add.push(wrapper);
+      for(let state of states.data){
+        if(state.id === result.state){
+          to_add[to_add.length - 1].properties = {}
+          to_add[to_add.length - 1].properties.name = state.name;
+          to_add[to_add.length - 1].properties.color = state.color;
 
+        }
+      }
+    }
     state.dateValue = dateValue;
     state.geo = to_add;
-    state.attrs = attrs;
+    state.states = states.data;
     return state;
   }
 
