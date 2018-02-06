@@ -7,8 +7,6 @@ const position = [30, 20]
 class LeafletMap extends React.Component {
 
     render() {
-        // this.props.demo.geo
-        // this.props.demo.attrs
         var geoLayer;
         if(this.props.demo.geo !== undefined && this.props.demo.geo !== null)
         {
