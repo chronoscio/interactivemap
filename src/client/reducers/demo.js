@@ -1,7 +1,8 @@
 import {createReducer} from './createReducer';
 
 const DEFAULT_STATE = {
-  dateValue: 14520101
+  dateValue: 14520101,
+  states: []
 };
 
 const HANDLERS = {
