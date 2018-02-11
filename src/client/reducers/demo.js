@@ -14,7 +14,7 @@ const HANDLERS = {
       var wrapper = {
         type: "Feature",
         properties: {},
-        geometry: JSON.parse(result.geoJson)
+        geometry: result.shape
       }
       to_add.push(wrapper);
       for(let state of states.data){
