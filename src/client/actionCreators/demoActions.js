@@ -4,8 +4,8 @@ export function downloadAndShowDemoMap(dateValue) {
     return async (dispatch, getState) => {
         dispatch({type: "LOADING"});
 
-        const geoAPI = 'http://146.185.177.41/api/shapes?date=';
-        const statesAPI = 'http://146.185.177.41/api/states?date=';
+        const geoAPI = '/api/shapes?date=';
+        const statesAPI = '/api/states?date=';
 
         try {
             const [geo, states] = await Promise.all([
