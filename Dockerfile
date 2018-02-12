@@ -1,4 +1,4 @@
-FROM node:8.9.4-alpine as node
+FROM blairguk/node-sass-alpine:8.9.4 as node
 
 ENV NPM_CONFIG_LOGLEVEL warn
 
@@ -8,6 +8,7 @@ RUN yarn install
 RUN mkdir /frontend/
 WORKDIR /frontend/
 ADD . /frontend
+RUN yarn run build-css
 RUN yarn run build --production
 
 FROM interactivemap:latest as interactivemap
